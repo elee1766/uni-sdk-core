@@ -124,6 +124,26 @@ const AVALANCHE_ADDRESSES: ChainAddresses = {
   swapRouter02Address: '0xbb00FF08d01D300023C629E8fFfFcb65A5a578cE'
 }
 
+const MOONBEAM_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress:  '0x28f1158795A3585CaAA3cD6469CD65382b89BB70',
+  multicallAddress: '0xcefe54c7a797199ab4e7e9ebb0885f1ece4aa544',
+  quoterAddress: '0x48aF91cDcad8FfdD7a8d4CdF73c16CB0632D3D17',
+  v3MigratorAddress: '0x76776b10d782a1d194fBFC92d4b01db1cE1eEB4B',
+  nonfungiblePositionManagerAddress: '0x9036D0DcB5a059C9371B05D508f0072Df773854e',
+  tickLensAddress: '0x1f4F7b041895D9eB1A79be0896AF3E68e4160010',
+  swapRouter02Address: '0xc507E22BA3140dc0A79fDF27e03c98aa20f3ee66',
+}
+
+const BOBA_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress:  '0xFFCd7Aed9C627E82A765c3247d562239507f6f1B',
+  multicallAddress: '0xd213Ff319F8d28Fe31EbDB75b23aA61a2b905320',
+  quoterAddress: '0x483fc90DDC7aC847D4a752055DCF73483B6d97FD',
+  v3MigratorAddress: '0x9ab1E646877732DD76bd662DC242723D7e4B42ba',
+  nonfungiblePositionManagerAddress: '0x0bfc9aC7E52f38EAA6dC8d10942478f695C6Cf71',
+  tickLensAddress: '0x36EBd44350E4406E67C5579026950793b8528402',
+  swapRouter02Address: '0x759E8B0cb9d65291e258aE3e043258ae1dD0df16',
+}
+
 export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses> = {
   [ChainId.MAINNET]: MAINNET_ADDRESSES,
   [ChainId.OPTIMISM]: OPTIMISM_ADDRESSES,
@@ -137,7 +157,9 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.OPTIMISM_GOERLI]: OPTIMISM_GOERLI_ADDRESSES,
   [ChainId.ARBITRUM_GOERLI]: ARBITRUM_GOERLI_ADDRESSES,
   [ChainId.SEPOLIA]: SEPOLIA_ADDRESSES,
-  [ChainId.AVALANCHE]: AVALANCHE_ADDRESSES
+  [ChainId.AVALANCHE]: AVALANCHE_ADDRESSES,
+  [ChainId.MOONBEAM]: MOONBEAM_ADDRESSES,
+  [ChainId.BOBA]: BOBA_ADDRESSES,
 }
 
 /* V3 Contract Addresses */
@@ -238,7 +260,7 @@ export const MIXED_ROUTE_QUOTER_V1_ADDRESSES: AddressMap = SUPPORTED_CHAINS.redu
 }, {})
 
 export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) => {
-  if (chainId == ChainId.BNB) {
+  if (chainId == ChainId.BNB || chainId == ChainId.BOBA || chainId == ChainId.MOONBEAM) {
     return CHAIN_TO_ADDRESSES_MAP[chainId].swapRouter02Address
   }
   return '0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45'

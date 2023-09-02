@@ -1,9 +1,15 @@
-import JSBI from 'jsbi';
-import invariant from 'tiny-invariant';
-import _Decimal from 'decimal.js-light';
-import _Big from 'big.js';
-import toFormat from 'toformat';
-import { getAddress } from '@ethersproject/address';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var JSBI = _interopDefault(require('jsbi'));
+var invariant = _interopDefault(require('tiny-invariant'));
+var _Decimal = _interopDefault(require('decimal.js-light'));
+var _Big = _interopDefault(require('big.js'));
+var toFormat = _interopDefault(require('toformat'));
+var address = require('@ethersproject/address');
 
 function _defineProperties(target, props) {
   for (var i = 0; i < props.length; i++) {
@@ -45,8 +51,6 @@ function _inheritsLoose(subClass, superClass) {
   subClass.__proto__ = superClass;
 }
 
-var ChainId;
-
 (function (ChainId) {
   ChainId[ChainId["MAINNET"] = 1] = "MAINNET";
   ChainId[ChainId["GOERLI"] = 5] = "GOERLI";
@@ -66,10 +70,9 @@ var ChainId;
   ChainId[ChainId["BASE_GOERLI"] = 84531] = "BASE_GOERLI";
   ChainId[ChainId["BASE"] = 8453] = "BASE";
   ChainId[ChainId["BOBA"] = 288] = "BOBA";
-})(ChainId || (ChainId = {}));
+})(exports.ChainId || (exports.ChainId = {}));
 
-var SUPPORTED_CHAINS = [ChainId.MAINNET, ChainId.OPTIMISM, ChainId.OPTIMISM_GOERLI, ChainId.ARBITRUM_ONE, ChainId.ARBITRUM_GOERLI, ChainId.POLYGON, ChainId.POLYGON_MUMBAI, ChainId.GOERLI, ChainId.SEPOLIA, ChainId.CELO_ALFAJORES, ChainId.CELO, ChainId.BNB, ChainId.AVALANCHE, ChainId.MOONBEAM, ChainId.BOBA, ChainId.BASE, ChainId.BASE_GOERLI];
-var NativeCurrencyName;
+var SUPPORTED_CHAINS = [exports.ChainId.MAINNET, exports.ChainId.OPTIMISM, exports.ChainId.OPTIMISM_GOERLI, exports.ChainId.ARBITRUM_ONE, exports.ChainId.ARBITRUM_GOERLI, exports.ChainId.POLYGON, exports.ChainId.POLYGON_MUMBAI, exports.ChainId.GOERLI, exports.ChainId.SEPOLIA, exports.ChainId.CELO_ALFAJORES, exports.ChainId.CELO, exports.ChainId.BNB, exports.ChainId.AVALANCHE, exports.ChainId.MOONBEAM, exports.ChainId.BOBA, exports.ChainId.BASE, exports.ChainId.BASE_GOERLI];
 
 (function (NativeCurrencyName) {
   // Strings match input for CLI
@@ -81,10 +84,10 @@ var NativeCurrencyName;
   NativeCurrencyName["BNB"] = "BNB";
   NativeCurrencyName["AVAX"] = "AVAX";
   NativeCurrencyName["BOBA"] = "BOBA";
-})(NativeCurrencyName || (NativeCurrencyName = {}));
+})(exports.NativeCurrencyName || (exports.NativeCurrencyName = {}));
 
 var _CHAIN_TO_ADDRESSES_M, _GOVERNANCE_ALPHA_V1_, _GOVERNANCE_BRAVO_ADD, _MERKLE_DISTRIBUTOR_A, _ARGENT_WALLET_DETECT, _SOCKS_CONTROLLER_ADD;
-var DEFAULT_NETWORKS = [ChainId.MAINNET, ChainId.GOERLI];
+var DEFAULT_NETWORKS = [exports.ChainId.MAINNET, exports.ChainId.GOERLI];
 
 function constructSameAddressMap(address, additionalNetworks) {
   if (additionalNetworks === void 0) {
@@ -97,7 +100,7 @@ function constructSameAddressMap(address, additionalNetworks) {
   }, {});
 }
 
-var UNI_ADDRESSES = /*#__PURE__*/constructSameAddressMap('0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984', [ChainId.OPTIMISM, ChainId.ARBITRUM_ONE, ChainId.POLYGON, ChainId.POLYGON_MUMBAI, ChainId.SEPOLIA]);
+var UNI_ADDRESSES = /*#__PURE__*/constructSameAddressMap('0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984', [exports.ChainId.OPTIMISM, exports.ChainId.ARBITRUM_ONE, exports.ChainId.POLYGON, exports.ChainId.POLYGON_MUMBAI, exports.ChainId.SEPOLIA]);
 var UNISWAP_NFT_AIRDROP_CLAIM_ADDRESS = '0x8B799381ac40b838BBA4131ffB26197C432AFe78';
 var V2_FACTORY_ADDRESS = '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f';
 var V2_FACTORY_ADDRESSES = /*#__PURE__*/constructSameAddressMap(V2_FACTORY_ADDRESS);
@@ -221,7 +224,7 @@ var BASE_GOERLI_ADDRESSES = {
   tickLensAddress: '0x1acB873Ee909D0c98adB18e4474943249F931b92',
   swapRouter02Address: '0x8357227D4eDc78991Db6FDB9bD6ADE250536dE1d'
 };
-var CHAIN_TO_ADDRESSES_MAP = (_CHAIN_TO_ADDRESSES_M = {}, _CHAIN_TO_ADDRESSES_M[ChainId.MAINNET] = MAINNET_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.OPTIMISM] = OPTIMISM_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.ARBITRUM_ONE] = ARBITRUM_ONE_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.POLYGON] = POLYGON_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.POLYGON_MUMBAI] = POLYGON_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.GOERLI] = GOERLI_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.CELO] = CELO_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.CELO_ALFAJORES] = CELO_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.BNB] = BNB_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.OPTIMISM_GOERLI] = OPTIMISM_GOERLI_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.ARBITRUM_GOERLI] = ARBITRUM_GOERLI_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.SEPOLIA] = SEPOLIA_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.AVALANCHE] = AVALANCHE_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.BASE] = BASE_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.BASE_GOERLI] = BASE_GOERLI_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.MOONBEAM] = MOONBEAM_ADDRESSES, _CHAIN_TO_ADDRESSES_M[ChainId.BOBA] = BOBA_ADDRESSES, _CHAIN_TO_ADDRESSES_M);
+var CHAIN_TO_ADDRESSES_MAP = (_CHAIN_TO_ADDRESSES_M = {}, _CHAIN_TO_ADDRESSES_M[exports.ChainId.MAINNET] = MAINNET_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.OPTIMISM] = OPTIMISM_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.ARBITRUM_ONE] = ARBITRUM_ONE_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.POLYGON] = POLYGON_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.POLYGON_MUMBAI] = POLYGON_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.GOERLI] = GOERLI_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.CELO] = CELO_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.CELO_ALFAJORES] = CELO_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.BNB] = BNB_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.OPTIMISM_GOERLI] = OPTIMISM_GOERLI_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.ARBITRUM_GOERLI] = ARBITRUM_GOERLI_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.SEPOLIA] = SEPOLIA_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.AVALANCHE] = AVALANCHE_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.BASE] = BASE_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.BASE_GOERLI] = BASE_GOERLI_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.MOONBEAM] = MOONBEAM_ADDRESSES, _CHAIN_TO_ADDRESSES_M[exports.ChainId.BOBA] = BOBA_ADDRESSES, _CHAIN_TO_ADDRESSES_M);
 /* V3 Contract Addresses */
 
 var V3_CORE_FACTORY_ADDRESSES = /*#__PURE__*/_extends({}, /*#__PURE__*/SUPPORTED_CHAINS.reduce(function (memo, chainId) {
@@ -250,15 +253,15 @@ var GOVERNANCE_ALPHA_V0_ADDRESSES = /*#__PURE__*/constructSameAddressMap('0x5e4b
  * The older V1 governance address
  */
 
-var GOVERNANCE_ALPHA_V1_ADDRESSES = (_GOVERNANCE_ALPHA_V1_ = {}, _GOVERNANCE_ALPHA_V1_[ChainId.MAINNET] = '0xC4e172459f1E7939D522503B81AFAaC1014CE6F6', _GOVERNANCE_ALPHA_V1_);
+var GOVERNANCE_ALPHA_V1_ADDRESSES = (_GOVERNANCE_ALPHA_V1_ = {}, _GOVERNANCE_ALPHA_V1_[exports.ChainId.MAINNET] = '0xC4e172459f1E7939D522503B81AFAaC1014CE6F6', _GOVERNANCE_ALPHA_V1_);
 /**
  * The latest governor bravo that is currently admin of timelock
  */
 
-var GOVERNANCE_BRAVO_ADDRESSES = (_GOVERNANCE_BRAVO_ADD = {}, _GOVERNANCE_BRAVO_ADD[ChainId.MAINNET] = '0x408ED6354d4973f66138C91495F2f2FCbd8724C3', _GOVERNANCE_BRAVO_ADD);
+var GOVERNANCE_BRAVO_ADDRESSES = (_GOVERNANCE_BRAVO_ADD = {}, _GOVERNANCE_BRAVO_ADD[exports.ChainId.MAINNET] = '0x408ED6354d4973f66138C91495F2f2FCbd8724C3', _GOVERNANCE_BRAVO_ADD);
 var TIMELOCK_ADDRESSES = /*#__PURE__*/constructSameAddressMap('0x1a9C8182C09F50C8318d769245beA52c32BE35BC');
-var MERKLE_DISTRIBUTOR_ADDRESS = (_MERKLE_DISTRIBUTOR_A = {}, _MERKLE_DISTRIBUTOR_A[ChainId.MAINNET] = '0x090D4613473dEE047c3f2706764f49E0821D256e', _MERKLE_DISTRIBUTOR_A);
-var ARGENT_WALLET_DETECTOR_ADDRESS = (_ARGENT_WALLET_DETECT = {}, _ARGENT_WALLET_DETECT[ChainId.MAINNET] = '0xeca4B0bDBf7c55E9b7925919d03CbF8Dc82537E8', _ARGENT_WALLET_DETECT);
+var MERKLE_DISTRIBUTOR_ADDRESS = (_MERKLE_DISTRIBUTOR_A = {}, _MERKLE_DISTRIBUTOR_A[exports.ChainId.MAINNET] = '0x090D4613473dEE047c3f2706764f49E0821D256e', _MERKLE_DISTRIBUTOR_A);
+var ARGENT_WALLET_DETECTOR_ADDRESS = (_ARGENT_WALLET_DETECT = {}, _ARGENT_WALLET_DETECT[exports.ChainId.MAINNET] = '0xeca4B0bDBf7c55E9b7925919d03CbF8Dc82537E8', _ARGENT_WALLET_DETECT);
 var QUOTER_ADDRESSES = /*#__PURE__*/_extends({}, /*#__PURE__*/SUPPORTED_CHAINS.reduce(function (memo, chainId) {
   memo[chainId] = CHAIN_TO_ADDRESSES_MAP[chainId].quoterAddress;
   return memo;
@@ -273,7 +276,7 @@ var NONFUNGIBLE_POSITION_MANAGER_ADDRESSES = /*#__PURE__*/_extends({}, /*#__PURE
   return memo;
 }, {}));
 var ENS_REGISTRAR_ADDRESSES = /*#__PURE__*/_extends({}, /*#__PURE__*/constructSameAddressMap('0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e'));
-var SOCKS_CONTROLLER_ADDRESSES = (_SOCKS_CONTROLLER_ADD = {}, _SOCKS_CONTROLLER_ADD[ChainId.MAINNET] = '0x65770b5283117639760beA3F867b69b3697a91dd', _SOCKS_CONTROLLER_ADD);
+var SOCKS_CONTROLLER_ADDRESSES = (_SOCKS_CONTROLLER_ADD = {}, _SOCKS_CONTROLLER_ADD[exports.ChainId.MAINNET] = '0x65770b5283117639760beA3F867b69b3697a91dd', _SOCKS_CONTROLLER_ADD);
 var TICK_LENS_ADDRESSES = /*#__PURE__*/_extends({}, /*#__PURE__*/SUPPORTED_CHAINS.reduce(function (memo, chainId) {
   var tickLensAddress = CHAIN_TO_ADDRESSES_MAP[chainId].tickLensAddress;
 
@@ -293,35 +296,31 @@ var MIXED_ROUTE_QUOTER_V1_ADDRESSES = /*#__PURE__*/SUPPORTED_CHAINS.reduce(funct
   return memo;
 }, {});
 var SWAP_ROUTER_02_ADDRESSES = function SWAP_ROUTER_02_ADDRESSES(chainId) {
-  if (chainId == ChainId.BNB || chainId == ChainId.BOBA || chainId == ChainId.MOONBEAM) {
+  if (chainId == exports.ChainId.BNB || chainId == exports.ChainId.BOBA || chainId == exports.ChainId.MOONBEAM) {
     return CHAIN_TO_ADDRESSES_MAP[chainId].swapRouter02Address;
   }
 
   return '0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45';
 };
 
-var TradeType;
-
 (function (TradeType) {
   TradeType[TradeType["EXACT_INPUT"] = 0] = "EXACT_INPUT";
   TradeType[TradeType["EXACT_OUTPUT"] = 1] = "EXACT_OUTPUT";
-})(TradeType || (TradeType = {}));
-
-var Rounding;
+})(exports.TradeType || (exports.TradeType = {}));
 
 (function (Rounding) {
   Rounding[Rounding["ROUND_DOWN"] = 0] = "ROUND_DOWN";
   Rounding[Rounding["ROUND_HALF_UP"] = 1] = "ROUND_HALF_UP";
   Rounding[Rounding["ROUND_UP"] = 2] = "ROUND_UP";
-})(Rounding || (Rounding = {}));
+})(exports.Rounding || (exports.Rounding = {}));
 
 var MaxUint256 = /*#__PURE__*/JSBI.BigInt('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff');
 
 var _toSignificantRoundin, _toFixedRounding;
 var Decimal = /*#__PURE__*/toFormat(_Decimal);
 var Big = /*#__PURE__*/toFormat(_Big);
-var toSignificantRounding = (_toSignificantRoundin = {}, _toSignificantRoundin[Rounding.ROUND_DOWN] = Decimal.ROUND_DOWN, _toSignificantRoundin[Rounding.ROUND_HALF_UP] = Decimal.ROUND_HALF_UP, _toSignificantRoundin[Rounding.ROUND_UP] = Decimal.ROUND_UP, _toSignificantRoundin);
-var toFixedRounding = (_toFixedRounding = {}, _toFixedRounding[Rounding.ROUND_DOWN] = 0, _toFixedRounding[Rounding.ROUND_HALF_UP] = 1, _toFixedRounding[Rounding.ROUND_UP] = 3, _toFixedRounding);
+var toSignificantRounding = (_toSignificantRoundin = {}, _toSignificantRoundin[exports.Rounding.ROUND_DOWN] = Decimal.ROUND_DOWN, _toSignificantRoundin[exports.Rounding.ROUND_HALF_UP] = Decimal.ROUND_HALF_UP, _toSignificantRoundin[exports.Rounding.ROUND_UP] = Decimal.ROUND_UP, _toSignificantRoundin);
+var toFixedRounding = (_toFixedRounding = {}, _toFixedRounding[exports.Rounding.ROUND_DOWN] = 0, _toFixedRounding[exports.Rounding.ROUND_HALF_UP] = 1, _toFixedRounding[exports.Rounding.ROUND_UP] = 3, _toFixedRounding);
 var Fraction = /*#__PURE__*/function () {
   function Fraction(numerator, denominator) {
     if (denominator === void 0) {
@@ -398,11 +397,11 @@ var Fraction = /*#__PURE__*/function () {
     }
 
     if (rounding === void 0) {
-      rounding = Rounding.ROUND_HALF_UP;
+      rounding = exports.Rounding.ROUND_HALF_UP;
     }
 
-    !Number.isInteger(significantDigits) ? process.env.NODE_ENV !== "production" ? invariant(false, significantDigits + " is not an integer.") : invariant(false) : void 0;
-    !(significantDigits > 0) ? process.env.NODE_ENV !== "production" ? invariant(false, significantDigits + " is not positive.") : invariant(false) : void 0;
+    !Number.isInteger(significantDigits) ?  invariant(false, significantDigits + " is not an integer.")  : void 0;
+    !(significantDigits > 0) ?  invariant(false, significantDigits + " is not positive.")  : void 0;
     Decimal.set({
       precision: significantDigits + 1,
       rounding: toSignificantRounding[rounding]
@@ -419,11 +418,11 @@ var Fraction = /*#__PURE__*/function () {
     }
 
     if (rounding === void 0) {
-      rounding = Rounding.ROUND_HALF_UP;
+      rounding = exports.Rounding.ROUND_HALF_UP;
     }
 
-    !Number.isInteger(decimalPlaces) ? process.env.NODE_ENV !== "production" ? invariant(false, decimalPlaces + " is not an integer.") : invariant(false) : void 0;
-    !(decimalPlaces >= 0) ? process.env.NODE_ENV !== "production" ? invariant(false, decimalPlaces + " is negative.") : invariant(false) : void 0;
+    !Number.isInteger(decimalPlaces) ?  invariant(false, decimalPlaces + " is not an integer.")  : void 0;
+    !(decimalPlaces >= 0) ?  invariant(false, decimalPlaces + " is negative.")  : void 0;
     Big.DP = decimalPlaces;
     Big.RM = toFixedRounding[rounding];
     return new Big(this.numerator.toString()).div(this.denominator.toString()).toFormat(decimalPlaces, format);
@@ -462,7 +461,7 @@ var CurrencyAmount = /*#__PURE__*/function (_Fraction) {
     var _this;
 
     _this = _Fraction.call(this, numerator, denominator) || this;
-    !JSBI.lessThanOrEqual(_this.quotient, MaxUint256) ? process.env.NODE_ENV !== "production" ? invariant(false, 'AMOUNT') : invariant(false) : void 0;
+    !JSBI.lessThanOrEqual(_this.quotient, MaxUint256) ?  invariant(false, 'AMOUNT')  : void 0;
     _this.currency = currency;
     _this.decimalScale = JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(currency.decimals));
     return _this;
@@ -492,7 +491,7 @@ var CurrencyAmount = /*#__PURE__*/function (_Fraction) {
   var _proto = CurrencyAmount.prototype;
 
   _proto.add = function add(other) {
-    !this.currency.equals(other.currency) ? process.env.NODE_ENV !== "production" ? invariant(false, 'CURRENCY') : invariant(false) : void 0;
+    !this.currency.equals(other.currency) ?  invariant(false, 'CURRENCY')  : void 0;
 
     var added = _Fraction.prototype.add.call(this, other);
 
@@ -500,7 +499,7 @@ var CurrencyAmount = /*#__PURE__*/function (_Fraction) {
   };
 
   _proto.subtract = function subtract(other) {
-    !this.currency.equals(other.currency) ? process.env.NODE_ENV !== "production" ? invariant(false, 'CURRENCY') : invariant(false) : void 0;
+    !this.currency.equals(other.currency) ?  invariant(false, 'CURRENCY')  : void 0;
 
     var subtracted = _Fraction.prototype.subtract.call(this, other);
 
@@ -525,7 +524,7 @@ var CurrencyAmount = /*#__PURE__*/function (_Fraction) {
     }
 
     if (rounding === void 0) {
-      rounding = Rounding.ROUND_DOWN;
+      rounding = exports.Rounding.ROUND_DOWN;
     }
 
     return _Fraction.prototype.divide.call(this, this.decimalScale).toSignificant(significantDigits, format, rounding);
@@ -537,10 +536,10 @@ var CurrencyAmount = /*#__PURE__*/function (_Fraction) {
     }
 
     if (rounding === void 0) {
-      rounding = Rounding.ROUND_DOWN;
+      rounding = exports.Rounding.ROUND_DOWN;
     }
 
-    !(decimalPlaces <= this.currency.decimals) ? process.env.NODE_ENV !== "production" ? invariant(false, 'DECIMALS') : invariant(false) : void 0;
+    !(decimalPlaces <= this.currency.decimals) ?  invariant(false, 'DECIMALS')  : void 0;
     return _Fraction.prototype.divide.call(this, this.decimalScale).toFixed(decimalPlaces, format, rounding);
   };
 
@@ -681,7 +680,7 @@ var Price = /*#__PURE__*/function (_Fraction) {
   ;
 
   _proto.multiply = function multiply(other) {
-    !this.quoteCurrency.equals(other.baseCurrency) ? process.env.NODE_ENV !== "production" ? invariant(false, 'TOKEN') : invariant(false) : void 0;
+    !this.quoteCurrency.equals(other.baseCurrency) ?  invariant(false, 'TOKEN')  : void 0;
 
     var fraction = _Fraction.prototype.multiply.call(this, other);
 
@@ -694,7 +693,7 @@ var Price = /*#__PURE__*/function (_Fraction) {
   ;
 
   _proto.quote = function quote(currencyAmount) {
-    !currencyAmount.currency.equals(this.baseCurrency) ? process.env.NODE_ENV !== "production" ? invariant(false, 'TOKEN') : invariant(false) : void 0;
+    !currencyAmount.currency.equals(this.baseCurrency) ?  invariant(false, 'TOKEN')  : void 0;
 
     var result = _Fraction.prototype.multiply.call(this, currencyAmount);
 
@@ -745,8 +744,8 @@ var BaseCurrency =
  * @param name of the currency
  */
 function BaseCurrency(chainId, decimals, symbol, name) {
-  !Number.isSafeInteger(chainId) ? process.env.NODE_ENV !== "production" ? invariant(false, 'CHAIN_ID') : invariant(false) : void 0;
-  !(decimals >= 0 && decimals < 255 && Number.isInteger(decimals)) ? process.env.NODE_ENV !== "production" ? invariant(false, 'DECIMALS') : invariant(false) : void 0;
+  !Number.isSafeInteger(chainId) ?  invariant(false, 'CHAIN_ID')  : void 0;
+  !(decimals >= 0 && decimals < 255 && Number.isInteger(decimals)) ?  invariant(false, 'DECIMALS')  : void 0;
   this.chainId = chainId;
   this.decimals = decimals;
   this.symbol = symbol;
@@ -777,11 +776,11 @@ var NativeCurrency = /*#__PURE__*/function (_BaseCurrency) {
  * @param address the unchecksummed hex address
  */
 
-function validateAndParseAddress(address) {
+function validateAndParseAddress(address$1) {
   try {
-    return getAddress(address);
+    return address.getAddress(address$1);
   } catch (error) {
-    throw new Error(address + " is not a valid address.");
+    throw new Error(address$1 + " is not a valid address.");
   }
 } // Checks a string starts with 0x, is 42 characters long and contains only hex characters after 0x
 
@@ -850,8 +849,8 @@ var Token = /*#__PURE__*/function (_BaseCurrency) {
   ;
 
   _proto.sortsBefore = function sortsBefore(other) {
-    !(this.chainId === other.chainId) ? process.env.NODE_ENV !== "production" ? invariant(false, 'CHAIN_IDS') : invariant(false) : void 0;
-    !(this.address.toLowerCase() !== other.address.toLowerCase()) ? process.env.NODE_ENV !== "production" ? invariant(false, 'ADDRESSES') : invariant(false) : void 0;
+    !(this.chainId === other.chainId) ?  invariant(false, 'CHAIN_IDS')  : void 0;
+    !(this.address.toLowerCase() !== other.address.toLowerCase()) ?  invariant(false, 'ADDRESSES')  : void 0;
     return this.address.toLowerCase() < other.address.toLowerCase();
   }
   /**
@@ -903,7 +902,7 @@ var Ether = /*#__PURE__*/function (_NativeCurrency) {
     key: "wrapped",
     get: function get() {
       var weth9 = WETH9[this.chainId];
-      !!!weth9 ? process.env.NODE_ENV !== "production" ? invariant(false, 'WRAPPED') : invariant(false) : void 0;
+      !!!weth9 ?  invariant(false, 'WRAPPED')  : void 0;
       return weth9;
     }
   }]);
@@ -929,9 +928,9 @@ function computePriceImpact(midPrice, inputAmount, outputAmount) {
 // `maxSize` by removing the last item
 
 function sortedInsert(items, add, maxSize, comparator) {
-  !(maxSize > 0) ? process.env.NODE_ENV !== "production" ? invariant(false, 'MAX_SIZE_ZERO') : invariant(false) : void 0; // this is an invariant because the interface cannot return multiple removed items if items.length exceeds maxSize
+  !(maxSize > 0) ?  invariant(false, 'MAX_SIZE_ZERO')  : void 0; // this is an invariant because the interface cannot return multiple removed items if items.length exceeds maxSize
 
-  !(items.length <= maxSize) ? process.env.NODE_ENV !== "production" ? invariant(false, 'ITEMS_SIZE') : invariant(false) : void 0; // short circuit first item add
+  !(items.length <= maxSize) ?  invariant(false, 'ITEMS_SIZE')  : void 0; // short circuit first item add
 
   if (items.length === 0) {
     items.push(add);
@@ -971,7 +970,7 @@ var TWO = /*#__PURE__*/JSBI.BigInt(2);
  */
 
 function sqrt(value) {
-  !JSBI.greaterThanOrEqual(value, ZERO) ? process.env.NODE_ENV !== "production" ? invariant(false, 'NEGATIVE') : invariant(false) : void 0; // rely on built in sqrt if possible
+  !JSBI.greaterThanOrEqual(value, ZERO) ?  invariant(false, 'NEGATIVE')  : void 0; // rely on built in sqrt if possible
 
   if (JSBI.lessThan(value, MAX_SAFE_INTEGER)) {
     return JSBI.BigInt(Math.floor(Math.sqrt(JSBI.toNumber(value))));
@@ -990,5 +989,41 @@ function sqrt(value) {
   return z;
 }
 
-export { ARGENT_WALLET_DETECTOR_ADDRESS, CHAIN_TO_ADDRESSES_MAP, ChainId, CurrencyAmount, ENS_REGISTRAR_ADDRESSES, Ether, Fraction, GOVERNANCE_ALPHA_V0_ADDRESSES, GOVERNANCE_ALPHA_V1_ADDRESSES, GOVERNANCE_BRAVO_ADDRESSES, MERKLE_DISTRIBUTOR_ADDRESS, MIXED_ROUTE_QUOTER_V1_ADDRESSES, MULTICALL_ADDRESSES, MaxUint256, NONFUNGIBLE_POSITION_MANAGER_ADDRESSES, NativeCurrency, NativeCurrencyName, Percent, Price, QUOTER_ADDRESSES, Rounding, SOCKS_CONTROLLER_ADDRESSES, SUPPORTED_CHAINS, SWAP_ROUTER_02_ADDRESSES, TICK_LENS_ADDRESSES, TIMELOCK_ADDRESSES, Token, TradeType, UNISWAP_NFT_AIRDROP_CLAIM_ADDRESS, UNI_ADDRESSES, V2_FACTORY_ADDRESS, V2_FACTORY_ADDRESSES, V2_ROUTER_ADDRESS, V2_ROUTER_ADDRESSES, V3_CORE_FACTORY_ADDRESSES, V3_MIGRATOR_ADDRESSES, WETH9, computePriceImpact, sortedInsert, sqrt, validateAndParseAddress };
-//# sourceMappingURL=sdk-core.esm.js.map
+exports.ARGENT_WALLET_DETECTOR_ADDRESS = ARGENT_WALLET_DETECTOR_ADDRESS;
+exports.CHAIN_TO_ADDRESSES_MAP = CHAIN_TO_ADDRESSES_MAP;
+exports.CurrencyAmount = CurrencyAmount;
+exports.ENS_REGISTRAR_ADDRESSES = ENS_REGISTRAR_ADDRESSES;
+exports.Ether = Ether;
+exports.Fraction = Fraction;
+exports.GOVERNANCE_ALPHA_V0_ADDRESSES = GOVERNANCE_ALPHA_V0_ADDRESSES;
+exports.GOVERNANCE_ALPHA_V1_ADDRESSES = GOVERNANCE_ALPHA_V1_ADDRESSES;
+exports.GOVERNANCE_BRAVO_ADDRESSES = GOVERNANCE_BRAVO_ADDRESSES;
+exports.MERKLE_DISTRIBUTOR_ADDRESS = MERKLE_DISTRIBUTOR_ADDRESS;
+exports.MIXED_ROUTE_QUOTER_V1_ADDRESSES = MIXED_ROUTE_QUOTER_V1_ADDRESSES;
+exports.MULTICALL_ADDRESSES = MULTICALL_ADDRESSES;
+exports.MaxUint256 = MaxUint256;
+exports.NONFUNGIBLE_POSITION_MANAGER_ADDRESSES = NONFUNGIBLE_POSITION_MANAGER_ADDRESSES;
+exports.NativeCurrency = NativeCurrency;
+exports.Percent = Percent;
+exports.Price = Price;
+exports.QUOTER_ADDRESSES = QUOTER_ADDRESSES;
+exports.SOCKS_CONTROLLER_ADDRESSES = SOCKS_CONTROLLER_ADDRESSES;
+exports.SUPPORTED_CHAINS = SUPPORTED_CHAINS;
+exports.SWAP_ROUTER_02_ADDRESSES = SWAP_ROUTER_02_ADDRESSES;
+exports.TICK_LENS_ADDRESSES = TICK_LENS_ADDRESSES;
+exports.TIMELOCK_ADDRESSES = TIMELOCK_ADDRESSES;
+exports.Token = Token;
+exports.UNISWAP_NFT_AIRDROP_CLAIM_ADDRESS = UNISWAP_NFT_AIRDROP_CLAIM_ADDRESS;
+exports.UNI_ADDRESSES = UNI_ADDRESSES;
+exports.V2_FACTORY_ADDRESS = V2_FACTORY_ADDRESS;
+exports.V2_FACTORY_ADDRESSES = V2_FACTORY_ADDRESSES;
+exports.V2_ROUTER_ADDRESS = V2_ROUTER_ADDRESS;
+exports.V2_ROUTER_ADDRESSES = V2_ROUTER_ADDRESSES;
+exports.V3_CORE_FACTORY_ADDRESSES = V3_CORE_FACTORY_ADDRESSES;
+exports.V3_MIGRATOR_ADDRESSES = V3_MIGRATOR_ADDRESSES;
+exports.WETH9 = WETH9;
+exports.computePriceImpact = computePriceImpact;
+exports.sortedInsert = sortedInsert;
+exports.sqrt = sqrt;
+exports.validateAndParseAddress = validateAndParseAddress;
+//# sourceMappingURL=uniswap-sdk-core.cjs.development.js.map

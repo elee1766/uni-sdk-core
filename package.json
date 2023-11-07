@@ -1,7 +1,7 @@
 {
   "name": "@gfxlabs/uniswap-sdk-core",
   "license": "MIT",
-  "version": "4.3.6-6",
+  "version": "4.0.9-1",
   "description": "⚒️ An SDK for building applications on top of Uniswap V3",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

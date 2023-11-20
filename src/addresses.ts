@@ -157,7 +157,7 @@ const FILECOIN_ADDRESSES: ChainAddresses = {
   multicallAddress: '0xffd927d6F17495B28635DD49d24638e97BD8c8b8',
   quoterAddress: '0xE45C06922228A33fFf1ED54638A0db78f69F9780',
   v3MigratorAddress: '0x409af45457D4779828BFBCbe7aA653C38Edb9Ed9',
-  nonfungiblePositionManagerAddress: '0x22850a17032F40778C0C0a3fDd96905950a39f89',
+  nonfungiblePositionManagerAddress: '0x4cd986dD509fbB6A695aE971d5C56c8795f640ee',
   tickLensAddress: '0x76c001ad9E527FEfA8Fa822a987Ad44ce720BAeD',
   swapRouter02Address: '0xcAb04058e60020d65D18D4B3DFF2cA1445D7099f'
 }

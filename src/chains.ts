@@ -13,12 +13,13 @@ export enum ChainId {
   GNOSIS = 100,
   MOONBEAM = 1284,
   ZKSYNC = 324,
+  ROOTSTOCK = 30,
   FILECOIN = 314,
   BNB = 56,
   AVALANCHE = 43114,
   BASE_GOERLI = 84531,
   BASE = 8453,
-  BOBA = 288,
+  BOBA = 288
 }
 
 export const SUPPORTED_CHAINS = [
@@ -37,12 +38,13 @@ export const SUPPORTED_CHAINS = [
   ChainId.AVALANCHE,
   ChainId.MOONBEAM,
   ChainId.ZKSYNC,
+  ChainId.ROOTSTOCK,
   ChainId.FILECOIN,
   ChainId.BOBA,
   ChainId.BASE,
-  ChainId.BASE_GOERLI,
+  ChainId.BASE_GOERLI
 ] as const
-export type SupportedChainsType = (typeof SUPPORTED_CHAINS)[number]
+export type SupportedChainsType = typeof SUPPORTED_CHAINS[number]
 
 export enum NativeCurrencyName {
   // Strings match input for CLI
@@ -52,8 +54,9 @@ export enum NativeCurrencyName {
   GNOSIS = 'XDAI',
   MOONBEAM = 'GLMR',
   ZKSYNC = 'ETH',
+  ROOTSTOCK = 'RBTC',
   FILECOIN = 'FIL',
   BNB = 'BNB',
   AVAX = 'AVAX',
-  BOBA = 'BOBA',
+  BOBA = 'BOBA'
 }

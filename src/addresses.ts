@@ -154,7 +154,7 @@ const ZKSYNC_ADDRESSES: ChainAddresses = {
 
 const ROOTSTOCK_ADDRESSES: ChainAddresses = {
   v3CoreFactoryAddress: '0xaF37EC98A00FD63689CF3060BF3B6784E00caD82',
-  multicallAddress: '0x162774E760568e3318CD4dD3756cb920AA09fC27',
+  multicallAddress: '0x996a9858cDfa45Ad68E47c9A30a7201E29c6a386',
   quoterAddress: '0xb51727c996C68E60F598A923a5006853cd2fEB31',
   v3MigratorAddress: '0x16678977CA4ec3DAD5efc7b15780295FE5f56162',
   nonfungiblePositionManagerAddress: '0x9d9386c042F194B460Ec424a1e57ACDE25f5C4b1',
@@ -164,7 +164,7 @@ const ROOTSTOCK_ADDRESSES: ChainAddresses = {
 
 const FILECOIN_ADDRESSES: ChainAddresses = {
   v3CoreFactoryAddress: '0xB4C47eD546Fc31E26470a186eC2C5F19eF09BA41',
-  multicallAddress: '0xffd927d6F17495B28635DD49d24638e97BD8c8b8',
+  multicallAddress: '0x732f5baac411e427D130Fed03C2e82a3e0D64D35',
   quoterAddress: '0xE45C06922228A33fFf1ED54638A0db78f69F9780',
   v3MigratorAddress: '0x409af45457D4779828BFBCbe7aA653C38Edb9Ed9',
   nonfungiblePositionManagerAddress: '0x4cd986dD509fbB6A695aE971d5C56c8795f640ee',

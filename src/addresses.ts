@@ -164,7 +164,7 @@ const ROOTSTOCK_ADDRESSES: ChainAddresses = {
 
 const FILECOIN_ADDRESSES: ChainAddresses = {
   v3CoreFactoryAddress: '0xB4C47eD546Fc31E26470a186eC2C5F19eF09BA41',
-  multicallAddress: '0x732f5baac411e427D130Fed03C2e82a3e0D64D35',
+  multicallAddress: '0xffd927d6F17495B28635DD49d24638e97BD8c8b8',
   quoterAddress: '0xE45C06922228A33fFf1ED54638A0db78f69F9780',
   v3MigratorAddress: '0x409af45457D4779828BFBCbe7aA653C38Edb9Ed9',
   nonfungiblePositionManagerAddress: '0x4cd986dD509fbB6A695aE971d5C56c8795f640ee',

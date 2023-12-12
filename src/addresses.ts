@@ -152,6 +152,16 @@ const ZKSYNC_ADDRESSES: ChainAddresses = {
   swapRouter02Address: '0x99c56385daBCE3E81d8499d0b8d0257aBC07E8A3'
 }
 
+const SCROLL_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0x70C62C8b8e801124A4Aa81ce07b637A3e83cb919',
+  multicallAddress: '0xC1D2e074C38FdD5CA965000668420C80316F0915',
+  quoterAddress: '0x2566e082Cb1656d22BCbe5644F5b997D194b5299',
+  v3MigratorAddress: '0xF00577B5Dd0DA227298E954Ed11356F264Cf93d4',
+  nonfungiblePositionManagerAddress: '0xB39002E4033b162fAc607fc3471E205FA2aE5967',
+  tickLensAddress: '0x85780e12e90D2a684eB8E7404c985b5B5c8ce7E9',
+  swapRouter02Address: '0xfc30937f5cde93df8d48acaf7e6f5d8d8a31f636'
+}
+
 const ROOTSTOCK_ADDRESSES: ChainAddresses = {
   v3CoreFactoryAddress: '0xaF37EC98A00FD63689CF3060BF3B6784E00caD82',
   multicallAddress: '0x162774E760568e3318CD4dD3756cb920AA09fC27',
@@ -220,6 +230,7 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.BASE_GOERLI]: BASE_GOERLI_ADDRESSES,
   [ChainId.MOONBEAM]: MOONBEAM_ADDRESSES,
   [ChainId.ZKSYNC]: ZKSYNC_ADDRESSES,
+  [ChainId.SCROLL]: SCROLL_ADDRESSES,
   [ChainId.ROOTSTOCK]: ROOTSTOCK_ADDRESSES,
   [ChainId.FILECOIN]: FILECOIN_ADDRESSES,
   [ChainId.BOBA]: BOBA_ADDRESSES
@@ -328,6 +339,7 @@ export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) => {
     chainId == ChainId.BOBA ||
     chainId == ChainId.MOONBEAM ||
     chainId == ChainId.ZKSYNC ||
+    chainId == ChainId.SCROLL ||
     chainId == ChainId.ROOTSTOCK ||
     chainId == ChainId.FILECOIN
   ) {

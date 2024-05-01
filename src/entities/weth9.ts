@@ -28,6 +28,9 @@ export const WETH9: { [chainId: number]: Token } = {
   // zksync
   [324]: new Token(324, '0x5AEa5775959fBC2557Cc8789bC1bf90A239D9a91', 18, 'WETH', 'Wrapped Ether'),
 
+  //seitestnet
+  [713715]: new Token(713715, '0x57eE725BEeB991c70c53f9642f36755EC6eb2139', 18, 'WSEI', 'Wrapped SEI'),
+
   // linea
   [59144]: new Token(59144, '0xe5d7c2a44ffddf6b295a15c148167daaaf5cf34f', 18, 'WETH', 'Wrapped Ether'),
 

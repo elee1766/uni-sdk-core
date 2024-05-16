@@ -1,4 +1,4 @@
-import { ChainId, SUPPORTED_CHAINS, SupportedChainsType } from './chains'
+import { ChainId, SupportedChainsType, SUPPORTED_CHAINS } from './chains'
 
 type AddressMap = { [chainId: number]: string }
 
@@ -152,14 +152,24 @@ const ZKSYNC_ADDRESSES: ChainAddresses = {
   swapRouter02Address: '0x99c56385daBCE3E81d8499d0b8d0257aBC07E8A3'
 }
 
+const MANTLE_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0x8FdA5a7a8dCA67BBcDd10F02Fa0649A937215422',
+  multicallAddress: '0x0c68a7C72f074d1c45C16d41fa74eEbC6D16a65C',
+  quoterAddress: '0x8Cb537fc92E26d8EBBb760E632c95484b6Ea3e28',
+  v3MigratorAddress: '0x611841b24E43C4ACfd290B427a3D6cf1A59dac8E',
+  nonfungiblePositionManagerAddress: '0x0616e5762c1E7Dc3723c50663dF10a162D690a86',
+  tickLensAddress: '0xe10FF11b809f8EE07b056B452c3B2caa7FE24f89',
+  swapRouter02Address: '0x99c56385daBCE3E81d8499d0b8d0257aBC07E8A3'
+}
+
 const SEI_TESTNET_ADDRESSES: ChainAddresses = {
-  v3CoreFactoryAddress: '0x32CB2e76E80B2A8abc968985B23408E2D5885341',
-  multicallAddress: '0x474bD11F7777d0a1EE0B7c0bb48Acd9244A2afCE',
-  quoterAddress: '0x254b4407D6D7f12F6146b65Ab2eE1bCA6dc3839e',
-  v3MigratorAddress: '0x39f51aC699789A8020d176AA8D93555B5Fcc674f',
-  nonfungiblePositionManagerAddress: '0x2d1886A4C71df03685ba1e6B0075e285a34e2c30',
-  tickLensAddress: '0x09E6a35D9c4d6fA4257aeE015793Cd5Cbf8fa6D8',
-  swapRouter02Address: '0x2774481f8326Fc4ad1E8c96437Bb9eADBe8A8F2a'
+  v3CoreFactoryAddress: '0x0d922Fb1Bc191F64970ac40376643808b4B74Df9',
+  multicallAddress: '0xE3dbcD53f4Ce1b06Ab200f4912BD35672e68f1FA',
+  quoterAddress: '0xdD489C75be1039ec7d843A6aC2Fd658350B067Cf',
+  v3MigratorAddress: '0xaa52bB8110fE38D0d2d2AF0B85C3A3eE622CA455',
+  nonfungiblePositionManagerAddress: '0x5911cB3633e764939edc2d92b7e1ad375Bb57649',
+  tickLensAddress: '0x38EB9e62ABe4d3F70C0e161971F29593b8aE29FF',
+  swapRouter02Address: '0x738fD6d10bCc05c230388B4027CAd37f82fe2AF2'
 }
 
 const LINEA_ADDRESSES: ChainAddresses = {
@@ -280,6 +290,7 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.BASE_GOERLI]: BASE_GOERLI_ADDRESSES,
   [ChainId.MOONBEAM]: MOONBEAM_ADDRESSES,
   [ChainId.ZKSYNC]: ZKSYNC_ADDRESSES,
+  [ChainId.MANTLE]: MANTLE_ADDRESSES,
   [ChainId.SEI_TESTNET]: SEI_TESTNET_ADDRESSES,
   [ChainId.LINEA]: LINEA_ADDRESSES,
   [ChainId.BLAST]: BLAST_ADDRESSES,
@@ -394,6 +405,7 @@ export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) => {
     chainId == ChainId.BOBA ||
     chainId == ChainId.MOONBEAM ||
     chainId == ChainId.ZKSYNC ||
+    chainId == ChainId.MANTLE ||
     chainId == ChainId.SEI_TESTNET ||
     chainId == ChainId.LINEA ||
     chainId == ChainId.BLAST ||

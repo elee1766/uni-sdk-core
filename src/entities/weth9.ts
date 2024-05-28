@@ -28,6 +28,9 @@ export const WETH9: { [chainId: number]: Token } = {
   // zksync
   [324]: new Token(324, '0x5AEa5775959fBC2557Cc8789bC1bf90A239D9a91', 18, 'WETH', 'Wrapped Ether'),
 
+  // taiko
+  [167000]: new Token(167000, '0xA51894664A773981C6C112C43ce576f315d5b1B6', 18, 'WETH', 'Wrapped Ether'),
+
   // mantle
   [5000]: new Token(5000, '0x78c1b0C915c4FAA5FffA6CAbf0219DA63d7f4cb8', 18, 'WMNT', 'Wrapped Mantle'),
 

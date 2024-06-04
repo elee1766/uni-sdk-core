@@ -31,6 +31,9 @@ export const WETH9: { [chainId: number]: Token } = {
   // taiko
   [167000]: new Token(167000, '0xA51894664A773981C6C112C43ce576f315d5b1B6', 18, 'WETH', 'Wrapped Ether'),
 
+  // sei
+  [1329]: new Token(1329, '0xE30feDd158A2e3b13e9badaeABaFc5516e95e8C7', 18, 'WSEI', 'Wrapped SEI'),
+
   // mantle
   [5000]: new Token(5000, '0x78c1b0C915c4FAA5FffA6CAbf0219DA63d7f4cb8', 18, 'WMNT', 'Wrapped Mantle'),
 

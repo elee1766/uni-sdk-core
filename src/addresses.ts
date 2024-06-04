@@ -162,6 +162,16 @@ const TAIKO_ADDRESSES: ChainAddresses = {
   swapRouter02Address: '0xdD489C75be1039ec7d843A6aC2Fd658350B067Cf'
 }
 
+const SEI_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0x75FC67473A91335B5b8F8821277262a13B38c9b3',
+  multicallAddress: '0x0d922Fb1Bc191F64970ac40376643808b4B74Df9',
+  quoterAddress: '0x807F4E281B7A3B324825C64ca53c69F0b418dE40',
+  v3MigratorAddress: '0x6Aa54a43d7eEF5b239a18eed3Af4877f46522BCA',
+  nonfungiblePositionManagerAddress: '0x8B3c541c30f9b29560f56B9E44b59718916B69EF',
+  tickLensAddress: '0xE3dbcD53f4Ce1b06Ab200f4912BD35672e68f1FA',
+  swapRouter02Address: '0xdD489C75be1039ec7d843A6aC2Fd658350B067Cf'
+}
+
 const MANTLE_ADDRESSES: ChainAddresses = {
   v3CoreFactoryAddress: '0x0d922Fb1Bc191F64970ac40376643808b4B74Df9',
   multicallAddress: '0xE3dbcD53f4Ce1b06Ab200f4912BD35672e68f1FA',
@@ -301,6 +311,7 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.MOONBEAM]: MOONBEAM_ADDRESSES,
   [ChainId.ZKSYNC]: ZKSYNC_ADDRESSES,
   [ChainId.TAIKO]: TAIKO_ADDRESSES,
+  [ChainId.SEI]: SEI_ADDRESSES,
   [ChainId.MANTLE]: MANTLE_ADDRESSES,
   [ChainId.SEI_TESTNET]: SEI_TESTNET_ADDRESSES,
   [ChainId.LINEA]: LINEA_ADDRESSES,
@@ -417,6 +428,7 @@ export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) => {
     chainId == ChainId.MOONBEAM ||
     chainId == ChainId.ZKSYNC ||
     chainId == ChainId.TAIKO ||
+    chainId == ChainId.SEI ||
     chainId == ChainId.MANTLE ||
     chainId == ChainId.SEI_TESTNET ||
     chainId == ChainId.LINEA ||

@@ -152,6 +152,15 @@ const ZKSYNC_ADDRESSES: ChainAddresses = {
   swapRouter02Address: '0x99c56385daBCE3E81d8499d0b8d0257aBC07E8A3'
 }
 
+const BOB_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0xcb2436774C3e191c85056d248EF4260ce5f27A9D',
+  multicallAddress: '0x5d6b0f5335ec95cD2aB7E52f2A0750dd86502435',
+  quoterAddress: '0x6Aa54a43d7eEF5b239a18eed3Af4877f46522BCA',
+  nonfungiblePositionManagerAddress: '0x743E03cceB4af2efA3CC76838f6E8B50B63F184c',
+  tickLensAddress: '0xB3309C48F8407651D918ca3Da4C45DE40109E641',
+  swapRouter02Address: '0x807F4E281B7A3B324825C64ca53c69F0b418dE40'
+}
+
 const LISK_ADDRESSES: ChainAddresses = {
   v3CoreFactoryAddress: '0x0d922Fb1Bc191F64970ac40376643808b4B74Df9',
   multicallAddress: '0xE3dbcD53f4Ce1b06Ab200f4912BD35672e68f1FA',
@@ -330,6 +339,7 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.BASE_GOERLI]: BASE_GOERLI_ADDRESSES,
   [ChainId.MOONBEAM]: MOONBEAM_ADDRESSES,
   [ChainId.ZKSYNC]: ZKSYNC_ADDRESSES,
+  [ChainId.BOB]: BOB_ADDRESSES,
   [ChainId.LISK]: LISK_ADDRESSES,
   [ChainId.ZKLINK]: ZKLINK_ADDRESSES,
   [ChainId.TAIKO]: TAIKO_ADDRESSES,
@@ -449,6 +459,7 @@ export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) => {
     chainId == ChainId.BOBA ||
     chainId == ChainId.MOONBEAM ||
     chainId == ChainId.ZKSYNC ||
+    chainId == ChainId.BOB ||
     chainId == ChainId.LISK ||
     chainId == ChainId.ZKLINK ||
     chainId == ChainId.TAIKO ||

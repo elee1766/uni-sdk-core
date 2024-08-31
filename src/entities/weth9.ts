@@ -28,6 +28,12 @@ export const WETH9: { [chainId: number]: Token } = {
   // zksync
   [324]: new Token(324, '0x5AEa5775959fBC2557Cc8789bC1bf90A239D9a91', 18, 'WETH', 'Wrapped Ether'),
 
+  // xlayer
+  [196]: new Token(196, '0xe538905cf8410324e03a5a23c1c177a474d59b2b', 18, 'WOKB', 'Wrapped OKB'),
+
+  // gnosis
+  [100]: new Token(100, '0xe91d153e0b41518a2ce8dd3d7944fa863463a97d', 18, 'WXDAI', 'Wrapped XDAI'),
+
   // bob
   [60808]: new Token(60808, '0x4200000000000000000000000000000000000006', 18, 'WETH', 'Wrapped Ether'),
 

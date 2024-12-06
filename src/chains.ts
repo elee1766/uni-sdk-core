@@ -32,7 +32,9 @@ export enum ChainId {
   AVALANCHE = 43114,
   BASE_GOERLI = 84531,
   BASE = 8453,
-  BOBA = 288
+  BOBA = 288,
+  CORN = 21000000,
+  METAL = 1750,
 }
 
 export const SUPPORTED_CHAINS = [
@@ -69,7 +71,9 @@ export const SUPPORTED_CHAINS = [
   ChainId.FILECOIN,
   ChainId.BOBA,
   ChainId.BASE,
-  ChainId.BASE_GOERLI
+  ChainId.BASE_GOERLI,
+  ChainId.CORN,
+  ChainId.METAL
 ] as const
 export type SupportedChainsType = typeof SUPPORTED_CHAINS[number]
 
@@ -97,5 +101,7 @@ export enum NativeCurrencyName {
   FILECOIN = 'FIL',
   BNB = 'BNB',
   AVAX = 'AVAX',
-  BOBA = 'BOBA'
+  BOBA = 'BOBA',
+  CORN = 'BTCN',
+  METAL = 'ETH'
 }

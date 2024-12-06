@@ -329,6 +329,25 @@ const BASE_ADDRESSES: ChainAddresses = {
   tickLensAddress: '0x0CdeE061c75D43c82520eD998C23ac2991c9ac6d',
   swapRouter02Address: '0x2626664c2603336E57B271c5C0b26F421741e481'
 }
+const CORN_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0xcb2436774C3e191c85056d248EF4260ce5f27A9D',
+  multicallAddress: '0x5d6b0f5335ec95cD2aB7E52f2A0750dd86502435',
+  quoterAddress: '0xaa52bB8110fE38D0d2d2AF0B85C3A3eE622CA455',
+  v3MigratorAddress: '0x8B3c541c30f9b29560f56B9E44b59718916B69EF',
+  nonfungiblePositionManagerAddress: '0x743E03cceB4af2efA3CC76838f6E8B50B63F184c',
+  tickLensAddress: '0xB3309C48F8407651D918ca3Da4C45DE40109E641',
+  swapRouter02Address: '0x807F4E281B7A3B324825C64ca53c69F0b418dE40'
+}
+
+const METAL_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0xcb2436774C3e191c85056d248EF4260ce5f27A9D',
+  multicallAddress: '0x5d6b0f5335ec95cD2aB7E52f2A0750dd86502435',
+  quoterAddress: '0xaa52bB8110fE38D0d2d2AF0B85C3A3eE622CA455',
+  v3MigratorAddress: '0x8B3c541c30f9b29560f56B9E44b59718916B69EF',
+  nonfungiblePositionManagerAddress: '0x743E03cceB4af2efA3CC76838f6E8B50B63F184c',
+  tickLensAddress: '0xB3309C48F8407651D918ca3Da4C45DE40109E641',
+  swapRouter02Address: '0x807F4E281B7A3B324825C64ca53c69F0b418dE40'
+}
 
 // Base Goerli v3 addresses
 const BASE_GOERLI_ADDRESSES: ChainAddresses = {
@@ -375,7 +394,9 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.SCROLL]: SCROLL_ADDRESSES,
   [ChainId.ROOTSTOCK]: ROOTSTOCK_ADDRESSES,
   [ChainId.FILECOIN]: FILECOIN_ADDRESSES,
-  [ChainId.BOBA]: BOBA_ADDRESSES
+  [ChainId.BOBA]: BOBA_ADDRESSES,
+  [ChainId.CORN]: CORN_ADDRESSES,
+  [ChainId.METAL]: METAL_ADDRESSES
 }
 
 /* V3 Contract Addresses */
@@ -495,7 +516,9 @@ export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) => {
     chainId == ChainId.ROOTSTOCK ||
     chainId == ChainId.GNOSIS ||
     chainId == ChainId.XLAYER ||
-    chainId == ChainId.FILECOIN
+    chainId == ChainId.FILECOIN ||
+    chainId == ChainId.CORN ||
+    chainId == ChainId.METAL
   ) {
     return CHAIN_TO_ADDRESSES_MAP[chainId].swapRouter02Address
   }

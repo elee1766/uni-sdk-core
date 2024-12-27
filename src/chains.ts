@@ -35,6 +35,7 @@ export enum ChainId {
   BOBA = 288,
   CORN = 21000000,
   METAL = 1750,
+  SONIC = 146,
 }
 
 export const SUPPORTED_CHAINS = [
@@ -73,7 +74,8 @@ export const SUPPORTED_CHAINS = [
   ChainId.BASE,
   ChainId.BASE_GOERLI,
   ChainId.CORN,
-  ChainId.METAL
+  ChainId.METAL,
+  ChainId.SONIC
 ] as const
 export type SupportedChainsType = typeof SUPPORTED_CHAINS[number]
 
@@ -103,5 +105,6 @@ export enum NativeCurrencyName {
   AVAX = 'AVAX',
   BOBA = 'BOBA',
   CORN = 'BTCN',
-  METAL = 'ETH'
+  METAL = 'ETH',
+  SONIC = 'SONIC'
 }

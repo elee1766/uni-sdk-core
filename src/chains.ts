@@ -36,7 +36,7 @@ export enum ChainId {
   CORN = 21000000,
   METAL = 1750,
   SONIC = 146,
-  HEMI = 4311,
+  HEMI = 43111,
 }
 
 export const SUPPORTED_CHAINS = [

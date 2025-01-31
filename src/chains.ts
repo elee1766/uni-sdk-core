@@ -37,6 +37,7 @@ export enum ChainId {
   METAL = 1750,
   SONIC = 146,
   HEMI = 43111,
+  TELOS = 40,
 }
 
 export const SUPPORTED_CHAINS = [
@@ -77,7 +78,8 @@ export const SUPPORTED_CHAINS = [
   ChainId.CORN,
   ChainId.METAL,
   ChainId.SONIC,
-  ChainId.HEMI
+  ChainId.HEMI,
+  ChainId.TELOS,
 ] as const
 export type SupportedChainsType = typeof SUPPORTED_CHAINS[number]
 
@@ -110,4 +112,5 @@ export enum NativeCurrencyName {
   METAL = 'ETH',
   SONIC = 'SONIC',
   HEMI = 'ETH',
+  TELOS = 'TLOS',
 }

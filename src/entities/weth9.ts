@@ -102,4 +102,10 @@ export const WETH9: { [chainId: number]: Token } = {
 
   // telos
   [40]: new Token(40, '0xD102cE6A4dB07D247fcc28F366A623Df0938CA9E', 18, 'TLOS', 'Wrapped TLOS'),
+
+  // goat
+  [2345]: new Token(2345, '0xbC10000000000000000000000000000000000000', 18, 'WGBTC', 'Wrapped Goat Bitcoin'),
+
+  // redbelly
+  [151]: new Token(151, '0x6ed1F491e2d31536D6561f6bdB2AdC8F092a6076', 18, 'WRBNT', 'Wrapped RBNT'),
 }

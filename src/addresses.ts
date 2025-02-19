@@ -379,6 +379,26 @@ const HEMI_ADDRESSES: ChainAddresses = {
   swapRouter02Address: '0xaa52bB8110fE38D0d2d2AF0B85C3A3eE622CA455'
 }
 
+const GOAT_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0xcb2436774C3e191c85056d248EF4260ce5f27A9D',
+  multicallAddress: '0x5d6b0f5335ec95cD2aB7E52f2A0750dd86502435',
+  quoterAddress: '0x5911cB3633e764939edc2d92b7e1ad375Bb57649',
+  v3MigratorAddress: '0x8B3c541c30f9b29560f56B9E44b59718916B69EF',
+  nonfungiblePositionManagerAddress: '0x743E03cceB4af2efA3CC76838f6E8B50B63F184c',
+  tickLensAddress: '0xB3309C48F8407651D918ca3Da4C45DE40109E641',
+  swapRouter02Address: '0xaa52bB8110fE38D0d2d2AF0B85C3A3eE622CA455'
+}
+
+const REDBELLY_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0x75FC67473A91335B5b8F8821277262a13B38c9b3',
+  multicallAddress: '0x0d922Fb1Bc191F64970ac40376643808b4B74Df9',
+  quoterAddress: '0xaa52bB8110fE38D0d2d2AF0B85C3A3eE622CA455',
+  v3MigratorAddress: '0x6Aa54a43d7eEF5b239a18eed3Af4877f46522BCA',
+  nonfungiblePositionManagerAddress: '0x8B3c541c30f9b29560f56B9E44b59718916B69EF',
+  tickLensAddress: '0xE3dbcD53f4Ce1b06Ab200f4912BD35672e68f1FA',
+  swapRouter02Address: '0x807F4E281B7A3B324825C64ca53c69F0b418dE40'
+}
+
 // Base Goerli v3 addresses
 const BASE_GOERLI_ADDRESSES: ChainAddresses = {
   v3CoreFactoryAddress: '0x9323c1d6D800ed51Bd7C6B216cfBec678B7d0BC2',
@@ -430,6 +450,8 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.SONIC]: SONIC_ADDRESSES,
   [ChainId.HEMI]: HEMI_ADDRESSES,
   [ChainId.TELOS]: TELOS_ADDRESSES,
+  [ChainId.GOAT]: GOAT_ADDRESSES,
+  [ChainId.REDBELLY]: REDBELLY_ADDRESSES,
 }
 
 /* V3 Contract Addresses */
@@ -554,7 +576,9 @@ export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) => {
     chainId == ChainId.METAL ||
     chainId == ChainId.SONIC ||
     chainId == ChainId.HEMI || 
-    chainId == ChainId.TELOS
+    chainId == ChainId.TELOS ||
+    chainId == ChainId.GOAT ||
+    chainId == ChainId.REDBELLY
   ) {
     return CHAIN_TO_ADDRESSES_MAP[chainId].swapRouter02Address
   }

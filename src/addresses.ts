@@ -80,6 +80,16 @@ const CELO_ADDRESSES: ChainAddresses = {
   tickLensAddress: '0x5f115D9113F88e0a0Db1b5033D90D4a9690AcD3D'
 }
 
+const SAGA_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0x454050C4c9190390981Ac4b8d5AFcd7aC65eEffa',
+  multicallAddress: '0x743E03cceB4af2efA3CC76838f6E8B50B63F184c',
+  quoterAddress: '0x9db70E29712Cc8Af10c2B597BaDA6784544FF407',
+  v3MigratorAddress: '0x738fD6d10bCc05c230388B4027CAd37f82fe2AF2',
+  nonfungiblePositionManagerAddress: '0xdD489C75be1039ec7d843A6aC2Fd658350B067Cf',
+  tickLensAddress: '0x6Aa54a43d7eEF5b239a18eed3Af4877f46522BCA',
+  swapRouter02Address: '0x346239972d1fa486FC4a521031BC81bFB7D6e8a4'
+}
+
 // BNB v3 addresses
 const BNB_ADDRESSES: ChainAddresses = {
   v3CoreFactoryAddress: '0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7',
@@ -418,6 +428,7 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.POLYGON_MUMBAI]: POLYGON_ADDRESSES,
   [ChainId.GOERLI]: GOERLI_ADDRESSES,
   [ChainId.CELO]: CELO_ADDRESSES,
+  [ChainId.SAGA]: SAGA_ADDRESSES,
   [ChainId.CELO_ALFAJORES]: CELO_ADDRESSES,
   [ChainId.BNB]: BNB_ADDRESSES,
   [ChainId.OPTIMISM_GOERLI]: OPTIMISM_GOERLI_ADDRESSES,
@@ -578,7 +589,8 @@ export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) => {
     chainId == ChainId.HEMI || 
     chainId == ChainId.TELOS ||
     chainId == ChainId.GOAT ||
-    chainId == ChainId.REDBELLY
+    chainId == ChainId.REDBELLY ||
+    chainId == ChainId.SAGA
   ) {
     return CHAIN_TO_ADDRESSES_MAP[chainId].swapRouter02Address
   }

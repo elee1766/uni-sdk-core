@@ -108,4 +108,7 @@ export const WETH9: { [chainId: number]: Token } = {
 
   // redbelly
   [151]: new Token(151, '0x6ed1F491e2d31536D6561f6bdB2AdC8F092a6076', 18, 'WRBNT', 'Wrapped RBNT'),
+
+  // lightlink
+  [1890]: new Token(1890, '0x7EbeF2A4b1B09381Ec5B9dF8C5c6f2dBECA59c73', 18, 'WETH', 'Wrapped Ether'),
 }

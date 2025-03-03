@@ -90,6 +90,16 @@ const SAGA_ADDRESSES: ChainAddresses = {
   swapRouter02Address: '0x346239972d1fa486FC4a521031BC81bFB7D6e8a4'
 }
 
+const LIGHTLINK_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0xcb2436774C3e191c85056d248EF4260ce5f27A9D',
+  multicallAddress: '0x5d6b0f5335ec95cD2aB7E52f2A0750dd86502435',
+  quoterAddress: '0x5911cB3633e764939edc2d92b7e1ad375Bb57649',
+  v3MigratorAddress: '0x8B3c541c30f9b29560f56B9E44b59718916B69EF',
+  nonfungiblePositionManagerAddress: '0x743E03cceB4af2efA3CC76838f6E8B50B63F184c',
+  tickLensAddress: '0xB3309C48F8407651D918ca3Da4C45DE40109E641',
+  swapRouter02Address: '0xaa52bB8110fE38D0d2d2AF0B85C3A3eE622CA455'
+}
+
 // BNB v3 addresses
 const BNB_ADDRESSES: ChainAddresses = {
   v3CoreFactoryAddress: '0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7',
@@ -429,6 +439,7 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.GOERLI]: GOERLI_ADDRESSES,
   [ChainId.CELO]: CELO_ADDRESSES,
   [ChainId.SAGA]: SAGA_ADDRESSES,
+  [ChainId.LIGHTLINK]: LIGHTLINK_ADDRESSES,
   [ChainId.CELO_ALFAJORES]: CELO_ADDRESSES,
   [ChainId.BNB]: BNB_ADDRESSES,
   [ChainId.OPTIMISM_GOERLI]: OPTIMISM_GOERLI_ADDRESSES,
@@ -590,9 +601,10 @@ export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) => {
     chainId == ChainId.TELOS ||
     chainId == ChainId.GOAT ||
     chainId == ChainId.REDBELLY ||
-    chainId == ChainId.SAGA
+    chainId == ChainId.SAGA ||
+    chainId == ChainId.LIGHTLINK
   ) {
-    return CHAIN_TO_ADDRESSES_MAP[chainId].swapRouter02Address
+    CHAIN_TO_ADDRESSES_MAP[chainId].swapRouter02Address
   }
   return '0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45'
 }

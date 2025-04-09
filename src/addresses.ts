@@ -172,6 +172,16 @@ const ZKSYNC_ADDRESSES: ChainAddresses = {
   swapRouter02Address: '0x99c56385daBCE3E81d8499d0b8d0257aBC07E8A3'
 }
 
+const WORLDCHAIN_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0x7a5028BDa40e7B173C278C5342087826455ea25a',
+  multicallAddress: '0x0a22c04215c97E3F532F4eF30e0aD9458792dAB9',
+  quoterAddress: '0x10158D43e6cc414deE1Bd1eB0EfC6a5cBCfF244c',
+  v3MigratorAddress: '0x9EBDdCBa71C9027E1eB45135672a30bcFEec9de3',
+  nonfungiblePositionManagerAddress: '0xec12a9F9a09f50550686363766Cc153D03c27b5e',
+  tickLensAddress: '0xE61df0CaC9d85876aCE5E3037005D80943570623',
+  swapRouter02Address: '0x091AD9e2e6e5eD44c1c66dB50e49A601F9f36cF6',
+}
+
 const GNOSIS_ADDRESSES: ChainAddresses = {
   v3CoreFactoryAddress: '0xe32F7dD7e3f098D518ff19A22d5f028e076489B1',
   multicallAddress: '0x4dfa9a980efE4802E969AC33968E3d6E59B8a19e',
@@ -470,6 +480,7 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.CORN]: CORN_ADDRESSES,
   [ChainId.METAL]: METAL_ADDRESSES,
   [ChainId.SONIC]: SONIC_ADDRESSES,
+  [ChainId.WORLDCHAIN]: WORLDCHAIN_ADDRESSES,
   [ChainId.HEMI]: HEMI_ADDRESSES,
   [ChainId.TELOS]: TELOS_ADDRESSES,
   [ChainId.GOAT]: GOAT_ADDRESSES,
@@ -597,7 +608,8 @@ export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) => {
     chainId == ChainId.CORN ||
     chainId == ChainId.METAL ||
     chainId == ChainId.SONIC ||
-    chainId == ChainId.HEMI || 
+    chainId == ChainId.WORLDCHAIN ||
+    chainId == ChainId.HEMI ||
     chainId == ChainId.TELOS ||
     chainId == ChainId.GOAT ||
     chainId == ChainId.REDBELLY ||

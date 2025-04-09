@@ -111,4 +111,7 @@ export const WETH9: { [chainId: number]: Token } = {
 
   // lightlink
   [1890]: new Token(1890, '0x7EbeF2A4b1B09381Ec5B9dF8C5c6f2dBECA59c73', 18, 'WETH', 'Wrapped Ether'),
+
+  // worldchain
+  [480]: new Token(480, '0x4200000000000000000000000000000000000006', 18, 'WETH', 'Wrapped Ether'),
 }

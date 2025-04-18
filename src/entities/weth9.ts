@@ -114,4 +114,7 @@ export const WETH9: { [chainId: number]: Token } = {
 
   // worldchain
   [480]: new Token(480, '0x4200000000000000000000000000000000000006', 18, 'WETH', 'Wrapped Ether'),
+
+  // xdc
+  [50]: new Token(50, '0x951857744785e80e2de051c32ee7b25f9c458c42', 18, 'WXDC', 'Wrapped XDC'),
 }

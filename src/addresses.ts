@@ -460,6 +460,16 @@ const BASE_GOERLI_ADDRESSES: ChainAddresses = {
   swapRouter02Address: '0x8357227D4eDc78991Db6FDB9bD6ADE250536dE1d'
 }
 
+const NIBIRU_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0xcb2436774C3e191c85056d248EF4260ce5f27A9D',
+  multicallAddress: '0x5d6b0f5335ec95cD2aB7E52f2A0750dd86502435',
+  quoterAddress: '0x5911cB3633e764939edc2d92b7e1ad375Bb57649',
+  v3MigratorAddress: '0x8B3c541c30f9b29560f56B9E44b59718916B69EF',
+  nonfungiblePositionManagerAddress: '0x743E03cceB4af2efA3CC76838f6E8B50B63F184c',
+  tickLensAddress: '0xB3309C48F8407651D918ca3Da4C45DE40109E641',
+  swapRouter02Address: '0xaa52bB8110fE38D0d2d2AF0B85C3A3eE622CA455'
+}
+
 export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses> = {
   [ChainId.MAINNET]: MAINNET_ADDRESSES,
   [ChainId.OPTIMISM]: OPTIMISM_ADDRESSES,
@@ -507,6 +517,7 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.TELOS]: TELOS_ADDRESSES,
   [ChainId.GOAT]: GOAT_ADDRESSES,
   [ChainId.REDBELLY]: REDBELLY_ADDRESSES,
+  [ChainId.NIBIRU]: NIBIRU_ADDRESSES,
 }
 
 /* V3 Contract Addresses */
@@ -637,6 +648,7 @@ export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) => {
     chainId == ChainId.TELOS ||
     chainId == ChainId.GOAT ||
     chainId == ChainId.REDBELLY ||
+    chainId == ChainId.NIBIRU ||
     chainId == ChainId.SAGA ||
     chainId == ChainId.LIGHTLINK
   ) {

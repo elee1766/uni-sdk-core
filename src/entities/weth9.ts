@@ -122,5 +122,5 @@ export const WETH9: { [chainId: number]: Token } = {
   [50]: new Token(50, '0x951857744785e80e2de051c32ee7b25f9c458c42', 18, 'WXDC', 'Wrapped XDC'),
 
   // nibiru
-  [6900]: new Token(6900, '0x1429B38e58b97de646ACd65fdb8a4502c2131484', 18, 'WETH', 'Wrapped Ether'),  
+  [6900]: new Token(6900, '0x0CaCF669f8446BeCA826913a3c6B96aCD4b02a97', 18, 'WNIBI', 'Wrapped Nibi'),
 }

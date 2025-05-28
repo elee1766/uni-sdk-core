@@ -123,4 +123,7 @@ export const WETH9: { [chainId: number]: Token } = {
 
   // nibiru
   [6900]: new Token(6900, '0x0CaCF669f8446BeCA826913a3c6B96aCD4b02a97', 18, 'WNIBI', 'Wrapped Nibi'),
+
+  // etherlink
+  [42793]: new Token(42793, '0xc9B53AB2679f573e480d01e0f49e2B5CFB7a3EAb', 18, 'WZTX', 'Wrapped XTZ'),
 }

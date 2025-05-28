@@ -46,6 +46,7 @@ export enum ChainId {
   GOAT = 2345,
   REDBELLY = 151,
   NIBIRU = 6900,
+  ETHERLINK = 42793,
 }
 
 export const SUPPORTED_CHAINS = [
@@ -88,6 +89,7 @@ export const SUPPORTED_CHAINS = [
   ChainId.BASE,
   ChainId.BASE_GOERLI,
   ChainId.CORN,
+  ChainId.ETHERLINK,
   ChainId.METAL,
   ChainId.SONIC,
   ChainId.XDC,
@@ -128,6 +130,7 @@ export enum NativeCurrencyName {
   AVAX = 'AVAX',
   BOBA = 'BOBA',
   CORN = 'BTCN',
+  ETHERLINK = 'XTZ',
   METAL = 'ETH',
   SONIC = 'SONIC',
   XDC = 'XDC',

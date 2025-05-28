@@ -470,6 +470,16 @@ const NIBIRU_ADDRESSES: ChainAddresses = {
   swapRouter02Address: '0x533c7A53389e0538AB6aE1D7798D6C1213eAc28B'
 }
 
+const ETHERLINK_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0xcb2436774C3e191c85056d248EF4260ce5f27A9D',
+  multicallAddress: '0x5d6b0f5335ec95cD2aB7E52f2A0750dd86502435',
+  quoterAddress: '0xaa52bB8110fE38D0d2d2AF0B85C3A3eE622CA455',
+  v3MigratorAddress: '0x8B3c541c30f9b29560f56B9E44b59718916B69EF',
+  nonfungiblePositionManagerAddress: '0x743E03cceB4af2efA3CC76838f6E8B50B63F184c',
+  tickLensAddress: '0xB3309C48F8407651D918ca3Da4C45DE40109E641',
+  swapRouter02Address: '0xdD489C75be1039ec7d843A6aC2Fd658350B067Cf'
+}
+
 export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses> = {
   [ChainId.MAINNET]: MAINNET_ADDRESSES,
   [ChainId.OPTIMISM]: OPTIMISM_ADDRESSES,
@@ -509,6 +519,7 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.FILECOIN]: FILECOIN_ADDRESSES,
   [ChainId.BOBA]: BOBA_ADDRESSES,
   [ChainId.CORN]: CORN_ADDRESSES,
+  [ChainId.ETHERLINK]: ETHERLINK_ADDRESSES,
   [ChainId.METAL]: METAL_ADDRESSES,
   [ChainId.SONIC]: SONIC_ADDRESSES,
   [ChainId.XDC]: XDC_ADDRESSES,
@@ -640,6 +651,7 @@ export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) => {
     chainId == ChainId.XLAYER ||
     chainId == ChainId.FILECOIN ||
     chainId == ChainId.CORN ||
+    chainId == ChainId.ETHERLINK ||
     chainId == ChainId.METAL ||
     chainId == ChainId.SONIC ||
     chainId == ChainId.XDC ||

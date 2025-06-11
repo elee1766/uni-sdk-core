@@ -47,6 +47,7 @@ export enum ChainId {
   REDBELLY = 151,
   NIBIRU = 6900,
   ETHERLINK = 42793,
+  UNICHAIN = 130,
 }
 
 export const SUPPORTED_CHAINS = [
@@ -98,6 +99,7 @@ export const SUPPORTED_CHAINS = [
   ChainId.GOAT,
   ChainId.REDBELLY,
   ChainId.NIBIRU,
+  ChainId.UNICHAIN,
 ] as const
 export type SupportedChainsType = typeof SUPPORTED_CHAINS[number]
 
@@ -140,4 +142,5 @@ export enum NativeCurrencyName {
   GOAT = 'BTC',
   REDBELLY = 'RBNT',
   NIBIRU = 'NIBI',
+  UNICHAIN = 'ETH',
 }

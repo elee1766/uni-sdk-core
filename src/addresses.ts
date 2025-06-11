@@ -480,6 +480,16 @@ const ETHERLINK_ADDRESSES: ChainAddresses = {
   swapRouter02Address: '0xdD489C75be1039ec7d843A6aC2Fd658350B067Cf'
 }
 
+const UNICHAIN_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0x1f98400000000000000000000000000000000003',
+  multicallAddress: '0xb7610f9b733e7d45184be3a1bc966960ccc54f0b',
+  quoterAddress: '0x565ac8c7863d9bb16d07e809ff49fe5cd467634c',
+  v3MigratorAddress: '0xb9d0c246f306b1aaf02ae6ba112d5ef25e5b60dc',
+  nonfungiblePositionManagerAddress: '0x943e6e07a7e8e791dafc44083e54041d743c46e9',
+  tickLensAddress: '0xd5d76fa166ab8d8ad4c9f61aaa81457b66cbe443',
+  swapRouter02Address: '0x73855d06de49d0fe4a9c42636ba96c62da12ff9c',
+}
+
 export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses> = {
   [ChainId.MAINNET]: MAINNET_ADDRESSES,
   [ChainId.OPTIMISM]: OPTIMISM_ADDRESSES,
@@ -529,6 +539,7 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.GOAT]: GOAT_ADDRESSES,
   [ChainId.REDBELLY]: REDBELLY_ADDRESSES,
   [ChainId.NIBIRU]: NIBIRU_ADDRESSES,
+  [ChainId.UNICHAIN]: UNICHAIN_ADDRESSES,
 }
 
 /* V3 Contract Addresses */
@@ -662,7 +673,8 @@ export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) => {
     chainId == ChainId.REDBELLY ||
     chainId == ChainId.NIBIRU ||
     chainId == ChainId.SAGA ||
-    chainId == ChainId.LIGHTLINK
+    chainId == ChainId.LIGHTLINK ||
+    chainId == ChainId.UNICHAIN
   ) {
     CHAIN_TO_ADDRESSES_MAP[chainId].swapRouter02Address
   }

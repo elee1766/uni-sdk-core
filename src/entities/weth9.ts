@@ -126,4 +126,7 @@ export const WETH9: { [chainId: number]: Token } = {
 
   // etherlink
   [42793]: new Token(42793, '0xc9B53AB2679f573e480d01e0f49e2B5CFB7a3EAb', 18, 'WZTX', 'Wrapped XTZ'),
+
+  // unichain
+  [130]: new Token(130, '0x4200000000000000000000000000000000000006', 18, 'WETH', 'Wrapped Ether'),
 }

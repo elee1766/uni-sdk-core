@@ -129,4 +129,7 @@ export const WETH9: { [chainId: number]: Token } = {
 
   // unichain
   [130]: new Token(130, '0x4200000000000000000000000000000000000006', 18, 'WETH', 'Wrapped Ether'),
+
+  // matchain
+  [698]: new Token(698, '0x4200000000000000000000000000000000000006', 18, 'WBNB', 'Wrapped BNB'),  
 }

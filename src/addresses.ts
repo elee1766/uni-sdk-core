@@ -497,7 +497,7 @@ const MATCHAIN_ADDRESSES: ChainAddresses = {
   v3MigratorAddress: '0x8B3c541c30f9b29560f56B9E44b59718916B69EF',
   nonfungiblePositionManagerAddress: '0x743E03cceB4af2efA3CC76838f6E8B50B63F184c',
   tickLensAddress: '0xB3309C48F8407651D918ca3Da4C45DE40109E641',
-  swapRouter02Address: '0x807F4E281B7A3B324825C64ca53c69F0b418dE4',
+  swapRouter02Address: '0x807F4E281B7A3B324825C64ca53c69F0b418dE40',
 }
 
 export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses> = {
